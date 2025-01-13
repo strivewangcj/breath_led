@@ -1,4 +1,4 @@
-
+`timescale 1ns/1ns
 module breath_led_tb;
 
   // Parameters
@@ -14,6 +14,13 @@ module breath_led_tb;
     .led(led)
   );
 
-//always #5  clk = ! clk ;
+always #10  clk = ! clk ;
+
+initial begin
+  clk = 0 ;
+  rst_n = 0;
+  #100
+  rst_n = 1;
+end
 
 endmodule
